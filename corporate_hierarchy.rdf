@@ -1,0 +1,520 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/"
+     xml:base="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:corporate_hierarchy="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy">
+        <rdfs:comment xml:lang="ru">Онтология организационной структуры с отделами и сотрудниками</rdfs:comment>
+        <rdfs:label xml:lang="ru">Корпоративная иерархия</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#isPartOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Department"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Department"/>
+        <rdfs:label xml:lang="ru">является частью:</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#managesDepartment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#managesDepartment">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Manager"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Department"/>
+        <rdfs:label xml:lang="ru">управляет отделом</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#managesEmployee -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#managesEmployee">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Manager"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Employee"/>
+        <rdfs:label xml:lang="ru">управляет сотрудником</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#reportsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#reportsTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Employee"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Manager"/>
+        <rdfs:label xml:lang="ru">подчиняется</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#worksIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#worksIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Employee"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Department"/>
+        <rdfs:label xml:lang="ru">работает в:</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#employeeID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#employeeID">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Employee"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="ru">ID_сотрудника</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#hasLocation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#hasLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Department"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="ru">имеет_локацию</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#salary -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#salary">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Employee"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label xml:lang="ru">зарплата</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Department -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Department">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Organization"/>
+        <rdfs:label xml:lang="ru">Отдел</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Employee -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Employee">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Organization"/>
+        <rdfs:label xml:lang="ru">Сотрудники</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#IT_Department -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#IT_Department">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Department"/>
+        <rdfs:label xml:lang="ru">Отдел IT</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Manager -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Manager">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Employee"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#managesDepartment"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Department"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#managesEmployee"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Employee"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Employee"/>
+        <rdfs:label xml:lang="ru">Менеджер</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Organization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Organization">
+        <rdfs:label xml:lang="ru">Организация</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Sales_Department -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Sales_Department">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Department"/>
+        <rdfs:label xml:lang="ru">Отдел продаж</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Worker -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Worker">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Employee"/>
+        <rdfs:label xml:lang="ru">Рабочий</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Lapyris_Dmitry -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Lapyris_Dmitry">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Manager"/>
+        <corporate_hierarchy:managesDepartment rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#it_dep"/>
+        <corporate_hierarchy:employeeID>ID_001</corporate_hierarchy:employeeID>
+        <corporate_hierarchy:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100000</corporate_hierarchy:salary>
+        <rdfs:label xml:lang="ru">Лапырис Дмитрий</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Medvedeva_Olga -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Medvedeva_Olga">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Worker"/>
+        <corporate_hierarchy:worksIn rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#sale_dep"/>
+        <corporate_hierarchy:employeeID>ID_004</corporate_hierarchy:employeeID>
+        <corporate_hierarchy:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">45000</corporate_hierarchy:salary>
+        <rdfs:label xml:lang="ru">Медведева Ольга</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Petrov_Alexander -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Petrov_Alexander">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Worker"/>
+        <corporate_hierarchy:worksIn rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#it_dep"/>
+        <corporate_hierarchy:employeeID>ID_003</corporate_hierarchy:employeeID>
+        <corporate_hierarchy:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">65000</corporate_hierarchy:salary>
+        <rdfs:label xml:lang="ru">Петров Александр</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Smirnova_Alina -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Smirnova_Alina">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Manager"/>
+        <corporate_hierarchy:managesDepartment rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#sale_dep"/>
+        <corporate_hierarchy:employeeID>ID_002</corporate_hierarchy:employeeID>
+        <corporate_hierarchy:salary rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">85000</corporate_hierarchy:salary>
+        <rdfs:label xml:lang="ru">Смирнова Алина</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#it_dep -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#it_dep">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#IT_Department"/>
+        <corporate_hierarchy:hasLocation>офис 101, 1 этаж</corporate_hierarchy:hasLocation>
+        <rdfs:label xml:lang="ru">Отдел IT</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#sale_dep -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#sale_dep">
+        <rdf:type rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Sales_Department"/>
+        <corporate_hierarchy:hasLocation>офис 201, 2 этаж</corporate_hierarchy:hasLocation>
+        <rdfs:label xml:lang="ru">Отдел продаж</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/m">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/d">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/e">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/w">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Все менеджеры - сотрудники</rdfs:comment>
+        <rdfs:label>Менеджеры</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Manager"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Employee"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Если рабочий работает в отделе, то он подчиняется менеджеру, при наличии менеджера этого отела</rdfs:comment>
+        <rdfs:label>Поддчиняется</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Worker"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/w"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#worksIn"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/w"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/d"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Manager"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/m"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#managesDepartment"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/m"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/d"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#reportsTo"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/w"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Если менеджер управляет отделом, а сотрудник работает в этом отделе, то менеджер управляет этим сотрудником</rdfs:comment>
+        <rdfs:label>Управление рабочим</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Manager"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#managesDepartment"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/m"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/d"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#Employee"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/e"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#worksIn"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/e"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/d"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy#managesEmployee"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/m"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/dmitry/ontologies/2025/11/corporate_hierarchy/e"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
